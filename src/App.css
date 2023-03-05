@@ -15,6 +15,10 @@ header {
     justify-content: space-between;
     padding: 0 4%;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--very-light-gray);
 }
 
 .mode-toggle {
@@ -32,7 +36,9 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 4%;
+    padding: 50px 4%;
+    /* Make element always visible */
+    
 }
 
 .search {
@@ -68,8 +74,41 @@ select {
     width: 175px;
     padding: 0 10px;
     border-right: 5px solid transparent;
+    cursor: pointer;
 }
 
 select * {
     padding: 10px;
+}
+
+main {
+    padding: 0 4%;
+}
+
+.cards-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 80px 40px;
+}
+
+.country-card {
+    background-color: white;
+    width: 300px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.country-card img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.country-card-info {
+    padding: 0px 20px 10px;
 }
