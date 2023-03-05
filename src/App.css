@@ -101,14 +101,24 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 400px;
 }
 
 .country-card img {
     width: 100%;
+    max-height: 200px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .country-card-info {
     padding: 0px 20px 10px;
+}
+
+.country-card-info p {
+    margin: 5px;
+}
+
+strong {
+    font-weight: 600;
 }

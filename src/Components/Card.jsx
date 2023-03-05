@@ -14,6 +14,23 @@ export default class Card extends React.Component {
     };
   }
   
+  parsePopulation(num) {
+    
+    let str = num.toString();
+    let result = '';
+    let counter = 0;
+    
+    for(let i = str.length - 1; i >= 0; i--) {
+      result = str[i] + result;
+      counter++;
+      if(counter === 3 && i !== 0) {
+        result = ',' + result;
+        counter = 0;
+      }
+    }
+    
+    return result;
+  }
 
   render() {
     return(
@@ -21,9 +38,9 @@ export default class Card extends React.Component {
         <img src={this.state.flag} alt={this.state.name} />
         <div className="country-card-info">
           <h2>{this.state.name}</h2>
+          <p><strong>Population:</strong> {this.parsePopulation(this.state.population)}</p>
           <p><strong>Region:</strong> {this.state.region}</p>
           <p><strong>Capital:</strong> {this.state.capital}</p>
-          <p><strong>Population:</strong> {this.state.population}</p>
         </div>
       </div>
     );

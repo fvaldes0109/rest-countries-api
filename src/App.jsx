@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Components/Home';
+import CardsArea from './Components/CardsArea.jsx';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         </div>
       </header>
 
-      <Home />
+      <CardsArea />
       
     </div>
   );
