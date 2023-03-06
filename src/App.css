@@ -168,3 +168,14 @@ button img {
     display: flex;
     justify-content: space-between;
 }
+
+.border-info {
+    margin: 50px 0;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.border-info {
+}

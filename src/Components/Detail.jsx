@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getCountry } from '../Providers/CountryProvider.js';
+import { getCountry, getCountriesNames } from '../Providers/CountryProvider.js';
 import { parsePopulation } from '../Helpers/Parsers.js';
 
 export default class Detail extends React.Component {
@@ -9,22 +9,42 @@ export default class Detail extends React.Component {
   constructor(props) {
     super(props);
 
-    this.country = window.location.pathname.slice(1);
-
     this.state = {
+      country: window.location.pathname.slice(1),
       countryData: {},
+      borderNames: [],
     }
   }
   
   componentDidMount() {
-  
-    getCountry(this.country).then((data) => {
+
+    getCountry(this.state.country).then((data) => {
       this.setState({ countryData: data[0] });
+
+      getCountriesNames(data[0].borders).then((names) => {
+        this.setState({ borderNames: names });
+      });
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+
+    if (prevState.country !== this.state.country) {
+      getCountry(this.state.country).then((data) => {
+        this.setState({ countryData: data[0] });
+
+        getCountriesNames(data[0].borders).then((names) => {
+          this.setState({ borderNames: names });
+        });
+      });
+    }
+  }
+
+  setCountry(country) {
+    this.setState({ country });
+  }
+
   render() {
-    console.log(this.state.countryData);
     
     const data = this.state.countryData;
     const content = Object.keys(this.state.countryData).length === 0 ? '' : (
@@ -47,6 +67,20 @@ export default class Detail extends React.Component {
                 <p><strong>Currencies:</strong> {Object.values(data.currencies).map(e => ' ' + e.name).toString()}</p>
                 <p><strong>Languages:</strong> {Object.values(data.languages).map(e => ' ' + e).toString()}</p>
               </div>
+            </div>
+            <div className='border-info'>
+              {this.state.borderNames.length === 0 ? '' : (
+                <>
+                  <span><strong>Border Countries:</strong></span>
+                  {this.state.borderNames.length === 0 ? '' :
+                    this.state.borderNames.map((country, index) => 
+                      <Link to={`/${country.name.common}`} key={index} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                        <button onClick={() => this.setCountry(country.name.common)}>{country.name.common}</button>
+                      </Link>
+                    )
+                  }
+                </>
+              )}
             </div>
           </div>
         </div>

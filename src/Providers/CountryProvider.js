@@ -17,7 +17,17 @@ const getCountry = async (fullName) => {
     return data;
 }
 
+const getCountriesNames = async (codes) => {
+
+    if (codes === undefined) return [];
+    const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${codes.toString()}&fields=name`);
+    const data = await response.json();
+
+    return data;
+}
+
 module.exports = {
     getAllCountries,
     getCountry,
+    getCountriesNames,
 }
