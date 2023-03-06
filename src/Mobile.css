@@ -1,0 +1,52 @@
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .cards-area {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 50px 4% 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    select {
+        margin: 40px 0;
+        height: 40px;
+    }
+
+    .info-page {
+        flex-direction: column;
+    }
+
+    .flag {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info-details {
+        flex-direction: column;
+        gap: 40px 0;
+    }
+
+    .border-info span {
+        width: 100%;
+    }
+
+    .border-info {
+        justify-content: left;
+    }
+}

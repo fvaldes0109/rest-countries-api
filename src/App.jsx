@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './App.css';
+import './Mobile.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import CardsArea from './Components/CardsArea.jsx';
