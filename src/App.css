@@ -37,8 +37,6 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 50px 4%;
-    /* Make element always visible */
-    
 }
 
 .search {
@@ -46,7 +44,6 @@ nav {
     background-color: white;
     border-radius: 5px;
     width: 400px;
-    /* Add shadow around */
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     align-items: center;
 }
@@ -104,6 +101,10 @@ main {
     height: 400px;
 }
 
+.country-card:hover {
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
 .country-card img {
     width: 100%;
     max-height: 200px;
@@ -121,4 +122,49 @@ main {
 
 strong {
     font-weight: 600;
+}
+
+button {
+    display: flex;
+    height: 30px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+button img {
+    height: 15px;
+    padding-right: 5px;
+}
+
+.info-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flag {
+    width: 45%;
+}
+
+.flag img {
+    width: 100%;
+    max-height: 500px;
+}
+
+.info {
+    width: 45%;
+}
+
+.info-details {
+    display: flex;
+    justify-content: space-between;
 }
