@@ -10,7 +10,7 @@ export default class Detail extends React.Component {
     super(props);
 
     this.state = {
-      country: window.location.pathname.slice(1),
+      country: window.location.pathname.split('/').slice(-1),
       countryData: {},
       borderNames: [],
     }
@@ -74,7 +74,7 @@ export default class Detail extends React.Component {
                   <span><strong>Border Countries:</strong></span>
                   {this.state.borderNames.length === 0 ? '' :
                     this.state.borderNames.map((country, index) => 
-                      <Link to={`/${country.name.common}`} key={index} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                      <Link to={`/rest-countries-api/${country.name.common}`} key={index} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                         <button onClick={() => this.setCountry(country.name.common)}>{country.name.common}</button>
                       </Link>
                     )
@@ -89,7 +89,7 @@ export default class Detail extends React.Component {
     return(
       <div className='detail-page'>
         <nav>
-          <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit'}}>
+          <Link to='/rest-countries-api' style={{ color: 'inherit', textDecoration: 'inherit'}}>
             <button className='back-button'>
               <img src="https://img.icons8.com/ios/50/000000/back.png" alt="back icon" width="20"/>
               Back

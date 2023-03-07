@@ -19,7 +19,7 @@ export default class Card extends React.Component {
 
   render() {
     return(
-      <Link to={'/' + this.state.name} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+      <Link to={'/rest-countries-api/' + this.state.name} style={{ color: 'inherit', textDecoration: 'inherit'}}>
         <div className="country-card">
           <img src={this.state.flag} alt={this.state.name} />
           <div className="country-card-info">

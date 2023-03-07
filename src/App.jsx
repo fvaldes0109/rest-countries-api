@@ -37,8 +37,8 @@ export default class App extends React.Component {
     
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<CardsArea countries={this.state.countries}/>} />
-            <Route path="/:country" element={<Detail />} />
+            <Route path="/rest-countries-api/" element={<CardsArea countries={this.state.countries}/>} />
+            <Route path="/rest-countries-api/:country/" element={<Detail />} />
           </Routes>
         </BrowserRouter>
     

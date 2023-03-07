@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: <https://www.frontendmentor.io/solutions/responsive-app-with-react-and-api-fetch-4G83E-v1PK>
+- Live Site URL: <https://fvaldes0109.github.io/rest-countries-api>
 
 ## My process
 
